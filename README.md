@@ -1,24 +1,6 @@
 # Grading-System
 Application that facilitates the project and assignment grading in university
 
-## Prerequisites
-    confusable-homoglyphs==2.0.2
-    Django==1.11.7
-    django-bootstrap3==9.1.0
-    django-registration==2.3
-    django-tinymce==2.6.0
-    olefile==0.44
-    Pillow==4.3.0
-    psycopg2==2.7.3.2
-    pytz==2017.3
-   
-
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd slaygram`
-
 
 Minimum Features
 * As a Lecturer:
@@ -36,6 +18,28 @@ As a Student:
 	* View Project Grades Feedback 
 	* Create a Profile with a contact Form 
 	* View Lecturers Profile
+	
+## Prerequisites
+    confusable-homoglyphs==2.0.2
+    Django==1.11.7
+    django-bootstrap3==9.1.0
+    django-registration==2.3
+    django-tinymce==2.6.0
+    olefile==0.44
+    Pillow==4.3.0
+    psycopg2==2.7.3.2
+    pytz==2017.3
+   
+
+
+## Installation
+
+* `git clone <repository-url>` this repository
+* `cd grading-system`
+* 
+
+
+
   
   
 
