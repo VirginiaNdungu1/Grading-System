@@ -14,6 +14,9 @@
       <div class="container">
 
         <!-- Toggle buttons and brand -->
+        <a class="navbar-brand" href="/">
+          HolBox
+        </a>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
             <span class="glyphicon glyphicon-option-vertical"></span>
@@ -25,9 +28,6 @@
             <span class="icon-bar"></span>
           </button> -->
 
-          <a class="navbar-brand" href="/">
-            HolBox
-          </a>
         </div>
         <!-- END Toggle buttons and brand -->
 
@@ -43,22 +43,14 @@
               </form>
             </li>
             <!-- action="/" -->
-            {% if user.is_authenticated and user.roles == 'LECTURER'%}
+            {% if user.is_authenticated%}
               <li>
-                <a href="/">{{user.roles}}</a>
+                <a href="{% url 'discover' %}">Discover</a>
               </li>
+
               <li>
-                <a href="/">{{ user.username }}</a>
-              </li>
-              <li>
-                <a href="/logout">logout</a>
-              </li>
-            {% elif user.is_authenticated and user.roles == 'STUDENT'%}
-              <li>
-                <a href="/">{{user.roles}}</a>
-              </li>
-              <li>
-                <a href="/">{{ user.username }}</a>
+                <a href="/">{{ user.first_name}}
+                  {{user.last_name}}</a>
               </li>
               <li>
                 <a href="/logout">logout</a>
