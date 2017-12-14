@@ -77,6 +77,7 @@ class Project(models.Model):
     additional_notes = models.TextField(max_length=500)
     submissions = models.ManyToManyField(
         'student.Submission', related_name='submitted_projects')
+    due_date = models.DateTimeField(auto_now_add=False, null=True)
 
     def __str__(self):
         return self.title
