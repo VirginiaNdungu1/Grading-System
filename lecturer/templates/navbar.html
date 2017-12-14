@@ -1,0 +1,82 @@
+{% load bootstrap3 %}
+{% load static %}
+{% load staticfiles %}
+{% block title %}{{title}}{% endblock %}
+{% block styles%}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+  <!-- Navigation -->
+  <header class="site-header navbar-transparent">
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <!-- Toggle buttons and brand -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+            <span class="glyphicon glyphicon-option-vertical"></span>
+          </button>
+
+          <!-- <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+
+          <a class="navbar-brand" href="/">
+            HolBox
+          </a>
+        </div>
+        <!-- END Toggle buttons and brand -->
+
+        <!-- Top navbar -->
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-form" role="search">
+                <div class="input-group has-feedback">
+                  <input type="text" class="form-control" placeholder="Search..">
+                  <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                </div>
+              </form>
+            </li>
+            <!-- action="/" -->
+            {% if user.is_authenticated and user.roles == 'LECTURER'%}
+              <li>
+                <a href="/">{{user.roles}}</a>
+              </li>
+              <li>
+                <a href="/">{{ user.username }}</a>
+              </li>
+              <li>
+                <a href="/logout">logout</a>
+              </li>
+            {% elif user.is_authenticated and user.roles == 'STUDENT'%}
+              <li>
+                <a href="/">{{user.roles}}</a>
+              </li>
+              <li>
+                <a href="/">{{ user.username }}</a>
+              </li>
+              <li>
+                <a href="/logout">logout</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/">How It Works</a>
+              </li>
+              <li>
+                <a href="/accounts/login">Sign In</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+        <!-- END Top navbar -->
+      </div>
+    </nav>
+    <!-- END Top navbar & branding -->
+
+  </header>
+{% endblock %}
