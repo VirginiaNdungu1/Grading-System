@@ -1,0 +1,51 @@
+{% extends "registration/base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <!-- Empty div -->
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        {% if form.errors %}
+          <p>
+            Password or Username is incorrect
+          </p>
+        {% endif %}
+        <div class="panel panel-default">
+
+          <div class="panel-heading">
+            <img class="text-center" src="{% static " images/HB.jpg" %}" alt="HB Logo">
+            <h3 class="text-center">HolBox</h3>
+          </div>
+          <div class="panel-body">
+
+            <form action="/accounts/login/" method="post" enctype='multipart/form-data'>
+              {% csrf_token %}
+              {% bootstrap_form form%}
+
+              <div class="form-group login-btn">
+                <input type="submit" class="btn btn-lg btn-block" value="Login">
+              </div>
+
+              <input type="hidden" name="next" value="/">
+
+            </form>
+            <!-- <p class="text-center">Don't have an account?<br>
+              <a href="/accounts/register/">Create a slaygram account
+              </a>
+            </p> -->
+          </div>
+
+        </div>
+
+      </div>
+      <!-- empty div -->
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+
+{% endblock %}
