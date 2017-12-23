@@ -1,0 +1,64 @@
+{% load bootstrap3 %}
+{% load static %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <div class="profile-section">
+    <div class="user_profile">
+      {% if request.user.profile.profile_pic %}
+        <img class="img-circle" src="{{request.user.profile.profile_pic.url}}" alt="profile_pic" width="150" height="150">
+      {% else %}
+        <img class="img-circle" src={% static "images/avator.jpg" %} alt="profile_pic" width="150" height="150">
+      {% endif %}
+    </div>
+    <div class="user-section">
+      <h4>{{request.user}}</h4>
+      <br>
+      <h5>
+        {{request.user.profile.email_address}}
+      </h5>
+      <div class="edit_profile">
+        <a href="{% url 'updateuserprofile' %}">
+          <div class="form-group">
+            <button class="btn btn-lg" type="submit">Edit Profile</button>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="units_section">
+      <button type="button" name="button" data-toggle="modal" data-target="#myModal">
+        Units</button>
+      <div class="units">
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                  Units</h4>
+              </div>
+              <div class="modal-body">
+                <!-- Units here... -->
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-sm" data-dismiss="modal" value="comment">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block scripts %}
+  {% bootstrap_javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
