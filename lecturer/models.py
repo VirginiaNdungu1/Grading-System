@@ -91,8 +91,10 @@ class Project(models.Model):
     link = models.CharField(max_length=140, blank=True)
     upload_file = models.FileField(blank=True)
     additional_notes = models.TextField(max_length=500)
+    assessment_type = models.ForeignKey(
+        Assessment, related_name="assessment", on_delete="models.CASCADE", null=True)
     submissions = models.ManyToManyField(
-        'student.Submission', related_name='submitted_projects')
+        'student.Submission', related_name='submitted_projects', blank=True)
     due_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
