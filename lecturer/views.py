@@ -65,3 +65,7 @@ def create_project(request):
     else:
         form = CreateProjectForm()
     return render(request, 'create_project.html', {"form": form})
+
+
+def units(request):
+    return render(request, 'units.html')
