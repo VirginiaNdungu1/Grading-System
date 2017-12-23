@@ -1,0 +1,234 @@
+h1 {
+  color: teal;
+  text-align: center;
+}
+
+.login-btn {
+  text-align: center;
+  margin-top: 3%;
+  color: white;
+  background-color: teal;
+}
+
+.login-btn input {
+  background-color: teal;
+}
+
+.panel-heading h3 {
+  font-size: 24px;
+  color: teal;
+}
+
+.profile-section {
+  height: 100%;
+  /*margin-left: 40%;*/
+  margin-top: 12%;
+}
+
+img {
+  z-index: -1;
+}
+
+img .img-circle {
+  border-radius: 50%;
+}
+
+.user-section {
+  margin-top: 22px;
+  margin-left: 41px;
+  margin-bottom: 28px;
+}
+
+.post_image {
+  margin-bottom: 5%;
+}
+
+.vote_section {
+  margin-bottom: 10%;
+}
+
+.vote_section a .download {
+  margin-left: 0%;
+}
+
+.vote_section p {
+  margin-left: 5%;
+}
+
+p .comment {
+  margin-bottom: 3.5%;
+}
+
+.post_section {
+  margin-bottom: 10%;
+}
+
+.username_section {
+  margin-top: -2.5%;
+  margin-left: 5%;
+}
+
+.user_profile {
+  margin-top: 5%;
+  margin-bottom: 15%;
+  margin-left: 20%;
+}
+
+.units_section {
+  margin-left: 48%;
+}
+
+.units_section button {
+  margin-top: -10%;
+  background-color: teal;
+  color: ghostwhite;
+  width: 14%;
+  height: 8%;
+}
+
+.units {
+  margin-top: 5%;
+}
+
+.username_section h5 {
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 5%;
+  color: #262626;
+  margin-bottom: -5%;
+}
+
+
+/*.follow_section {
+  margin-top: 6px;
+}*/
+
+.follow_section {
+  margin-top: -2.5%;
+  margin-left: 60%;
+}
+
+.edit_profile {
+  margin-top: -3.5%;
+  margin-left: 70%;
+}
+
+.edit_profile button {
+  background-color: teal;
+  color: white;
+}
+
+.follow_section button {
+  color: white;
+  background-color: teal;
+}
+
+.download_section {
+  margin-top: -6%;
+  margin-left: 80%;
+}
+
+.download_section button {
+  color: white;
+  background-color: teal;
+}
+
+.download {
+  float: right;
+  color: teal;
+  margin-right: 6%;
+}
+
+.download_icon {
+  position: absolute;
+  margin-left: 83%;
+  top: 1.5%;
+}
+
+.download a:hover {
+  color: #7B241C;
+}
+
+.like-section {
+  margin-left: -30%;
+}
+
+.comment-icon {
+  margin-left: 4%;
+}
+
+.user-section h4 {
+  color: #2B2A2B;
+  font-weight: bolder;
+  margin-top: -24%;
+  margin-left: 40%;
+}
+
+.card {
+  margin-bottom: 5%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.card .container {
+  padding: 30px 16px;
+}
+
+.card .follow-user {
+  padding-bottom: 30px;
+}
+
+.upvote {
+  margin-right: 3%;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.gallery .heading h5 {
+  color: #95A5A6;
+}
+
+.gallery .card {
+  display: block;
+  float: left;
+  position: relative;
+  width: 30%;
+  min-width: 128px;
+  margin-right: 3%;
+}
+
+.gallery .card .feature {
+  text-align: center;
+}
+
+.gallery .card figcaption {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.gallery .card .disover_follow {
+  text-align: center;
+  margin-bottom: 5%;
+  color: white;
+}
+
+.gallery .card .disover_follow button {
+  color: white;
+  background-color: teal;
+}
