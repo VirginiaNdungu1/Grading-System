@@ -5,6 +5,7 @@ Django==2.0
 django-bootstrap3==9.1.0
 django-phonenumber-field==1.3.0
 django-registration==2.3
+django-weekday-field==1.1.0
 gunicorn==19.7.1
 olefile==0.44
 phonenumberslite==8.8.8
