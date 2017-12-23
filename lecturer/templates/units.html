@@ -1,0 +1,45 @@
+{% load bootstrap3 %}
+{% load static %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/portal.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <header class="landing_page">
+    <div class="tabs" id="myTabs">
+      <div class="list-group-horizontal">
+        <a href="#notes" data-url="{% url 'create_project' %}" class="list-group-item list-group-item-info text-center" data-toggle="tab">
+          <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
+          <br/>NOTES
+        </a>
+        <a href="#assignments" data-url="{% url 'account' user.id %}" class="list-group-item list-group-item-warning text-center">
+          <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+          <br/>PROJECTS
+        </a>
+        <a href="#cats" class="list-group-item list-group-item-danger text-center">
+          <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+          <br/>CATS
+        </a>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="notes"></div>
+      <div class="tab-pane" id="assignments"></div>
+      <div class="tab-pane" id="cats"></div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block scripts %}
+  {% bootstrap_javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="external/jquery.ui.core.min.js"></script>
+  <script type="text/javascript" src="external/jquery.ui.widget.min.js"></script>
+  <script type="text/javascript" src="js/jquery.integralui.widget.min.js"></script>
+  <script type="text/javascript" src="js/jquery.integralui.tabstrip.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/units.js' %}"></script>
+{% endblock %}
