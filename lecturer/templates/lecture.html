@@ -23,7 +23,7 @@
         </a>
         <div class="collapse" id="units">
           {% for unit in units %}
-            <a href="#" class="list-group-item text-center">{{unit.code}}
+            <a href="#sub-unit" data-url="{% url 'units' %}" class="list-group-item text-center">{{unit.code}}
               <br/>{{unit.name}}</a>
             {% empty %}
             <a href="#" class="list-group-item text-center">Subitem 2<br/>Sub subitem2</a>
@@ -51,7 +51,7 @@
       <div id="discover" class="tab-pane active"></div>
       <div id="profile" class="tab-pane active"></div>
       <div id="units" class="tab-pane active"></div>
-      <div id="tab3" class="tab-pane active"></div>
+      <div id="sub-unit" class="tab-pane active"></div>
       <div id="tab4" class="tab-pane active"></div>
       <div id="tab5" class="tab-pane active"></div>
       <div id="project" class="tab-pane active"></div>
@@ -64,11 +64,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="external/jquery.ui.core.min.js"></script>
-
   <script type="text/javascript" src="external/jquery.ui.widget.min.js"></script>
-
   <script type="text/javascript" src="js/jquery.integralui.widget.min.js"></script>
-
   <script type="text/javascript" src="js/jquery.integralui.tabstrip.min.js"></script>
   <script type="text/javascript" src="{% static 'js/tabs.js' %}"></script>
 
