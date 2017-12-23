@@ -14,7 +14,10 @@ def is_lecturer(user):
 
 
 def lecture(request):
-    return render(request, 'lecture.html')
+    user = request.user
+    profile_id = user.id
+    units = user.profile.units.all()
+    return render(request, 'lecture.html', {'units': units, })
 
 
 @transaction.atomic
