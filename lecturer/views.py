@@ -62,6 +62,7 @@ def create_project(request):
             project = form.save(commit=False)
             project.lec_id = lec_id
             project.save()
+            return redirect(lecture)
     else:
         form = CreateProjectForm()
     return render(request, 'create_project.html', {"form": form})
