@@ -232,3 +232,30 @@ img {
   color: white;
   background-color: teal;
 }
+
+div .tabs {
+  margin-top: 1.8%;
+}
+
+.list-group-horizontal .list-group-item {
+  display: inline-block;
+}
+
+.list-group-horizontal .list-group-item {
+  margin-bottom: 0;
+  margin-left: 3%;
+  margin-right: 0;
+  width: 30%;
+  height: 15%;
+}
+
+.list-group-horizontal .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  margin-left: 0;
+}
+
+.list-group-horizontal .list-group-item:last-child {
+  /*border-top-right-radius: 4px;*/
+  border-bottom-left-radius: 0;
+}
