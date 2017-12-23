@@ -5,6 +5,7 @@ from django.dispatch import receiver
 from django.core.validators import RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 import student
+import weekday_field
 
 # Create your models here.
 
@@ -23,6 +24,23 @@ GENDER_CHOICES = (
     ('NONE', 'None')
 )
 
+DAYS_OF_WEEK = (
+    ('SUNDAY', 'Sun'),
+    ('MONDAY', 'Mon'),
+    ('TUESDAY', 'Tue'),
+    ('WEDNESDAY', 'Wed'),
+    ('THURSDAY', 'Thurs'),
+    ('FRIDAY', 'Fri'),
+    ('SATURDAY', 'Sat')
+)
+
+
+class Days(models.Model):
+    days = models.CharField(max_length=30, choices=DAYS_OF_WEEK)
+
+    def __str__(self):
+        return self.days
+
 
 class Program(models.Model):
     code = models.CharField(max_length=30)
@@ -36,8 +54,9 @@ class Unit(models.Model):
     code = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
     venue = models.CharField(max_length=50, null=True)
-    start_time = models.DateTimeField(auto_now_add=False, null=True)
-    stop_time = models.DateTimeField(auto_now_add=False, null=True)
+    unit_days = models.ManyToManyField(Days)
+    start_time = models.TimeField(auto_now_add=False, null=True)
+    stop_time = models.TimeField(auto_now_add=False, null=True)
     exam_date = models.DateTimeField(auto_now_add=False, null=True)
 
     def __str__(self):
@@ -86,7 +105,7 @@ class Profile(models.Model):
     acceptance_code = models.CharField(max_length=20, blank=True)
     profile_pic = models.ImageField(upload_to='pictures/', blank=True)
     id_number = models.PositiveIntegerField(null=True, blank=True)
-    phone_number = phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(blank=True)
     roles = models.CharField(max_length=30, choices=ROLE_CHOICES, blank=True)
     gender = models.CharField(
         max_length=30, choices=GENDER_CHOICES, default='NONE', blank=True)
