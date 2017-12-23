@@ -1,11 +1,15 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from . models import Profile, Program, Module, Unit
+from . models import Profile, Program, Module, Unit, Days
 
 #
 # class UnitAdmin(admin.ModelAdmin):
 #     filter_horizontal = ('sharing_modules', 'lec',)
+
+
+class DayAdmin(admin.ModelAdmin):
+    filter_horizontal = ('unit_days',)
 
 
 class ModuleAdmin(admin.ModelAdmin):
@@ -68,4 +72,5 @@ admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(Program)
 admin.site.register(Module, ModuleAdmin)
-admin.site.register(Unit)
+admin.site.register(Unit, DayAdmin)
+admin.site.register(Days)
