@@ -3,13 +3,13 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from . models import Profile, Program, Module, Unit
 
-
-class UnitAdmin(admin.ModelAdmin):
-    filter_horizontal = ('sharing_modules',)
+#
+# class UnitAdmin(admin.ModelAdmin):
+#     filter_horizontal = ('sharing_modules', 'lec',)
 
 
 class ModuleAdmin(admin.ModelAdmin):
-    filter_horizontal = ('enrolled_students',)
+    filter_horizontal = ('enrolled_students', 'common_units',)
 
 
 class ProfileInline(admin.StackedInline):
@@ -17,7 +17,7 @@ class ProfileInline(admin.StackedInline):
     can_delete = False
     verbose_name_plural = 'Profile'
     fk_name = 'user'
-    filter_horizontal = ('modules', 'programs')
+    filter_horizontal = ('modules', 'programs', 'units')
 
 
 class CustomUserAdmin(UserAdmin):
@@ -68,4 +68,4 @@ admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(Program)
 admin.site.register(Module, ModuleAdmin)
-admin.site.register(Unit, UnitAdmin)
+admin.site.register(Unit)
