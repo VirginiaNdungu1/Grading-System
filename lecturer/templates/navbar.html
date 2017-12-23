@@ -47,9 +47,8 @@
               <li>
                 <a href="{% url 'discover' %}">Discover</a>
               </li>
-
               <li>
-                <a href="/">{{ user.first_name}}
+                <a href="{% url 'account' user.id %}">{{ user.first_name}}
                   {{user.last_name}}</a>
               </li>
               <li>
