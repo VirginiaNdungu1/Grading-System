@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'registration',
     'bootstrap3',
     'phonenumber_field',
+    'weekday_field'
 ]
 
 MIDDLEWARE = [
