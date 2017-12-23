@@ -32,26 +32,25 @@ class Program(models.Model):
         return self.code
 
 
-class Module(models.Model):
+class Unit(models.Model):
     code = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
-    enrolled_students = models.ManyToManyField(
-        User, related_name='enrolled_students')
+    venue = models.CharField(max_length=50, null=True)
+    start_time = models.DateTimeField(auto_now_add=False, null=True)
+    stop_time = models.DateTimeField(auto_now_add=False, null=True)
+    exam_date = models.DateTimeField(auto_now_add=False, null=True)
 
     def __str__(self):
         return self.code
 
 
-class Unit(models.Model):
+class Module(models.Model):
     code = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
-    lec = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    sharing_modules = models.ManyToManyField(
-        Module, related_name='sharing_module')
-    venue = models.CharField(max_length=50, null=True)
-    start_time = models.DateTimeField(auto_now_add=False, null=True)
-    stop_time = models.DateTimeField(auto_now_add=False, null=True)
-    exam_date = models.DateTimeField(auto_now_add=False, null=True)
+    enrolled_students = models.ManyToManyField(
+        User, related_name='enrolled_students')
+    common_units = models.ManyToManyField(
+        Unit, related_name='common_units')
 
     def __str__(self):
         return self.code
@@ -69,15 +68,13 @@ class Assessment(models.Model):
 class Project(models.Model):
     lec = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='unit_lec')
-    category = models.ForeignKey(
-        Assessment, on_delete=models.CASCADE, related_name='categories')
     title = models.CharField(max_length=140)
     link = models.CharField(max_length=140, blank=True)
-    upload_file = models.FileField()
+    upload_file = models.FileField(blank=True)
     additional_notes = models.TextField(max_length=500)
     submissions = models.ManyToManyField(
         'student.Submission', related_name='submitted_projects')
-    due_date = models.DateTimeField(auto_now_add=False, null=True)
+    due_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -97,6 +94,8 @@ class Profile(models.Model):
     programs = models.ManyToManyField(
         Program)
     modules = models.ManyToManyField(Module)
+    units = models.ManyToManyField(
+        Unit)
 
     def __str__(self):
         return self.user.username + '' + self.user.first_name
