@@ -8,21 +8,26 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-  {{block.super}}
-
   <header class="landing_page">
     <div class="tab">
-      <div class="list-group">
-        <a href="/lec/discover" data-url="/lec/discover" class="list-group-item text-center">
+      <div class="list-group panel">
+        <a href="#discover" data-url="{% url 'discover' %}" class="list-group-item text-center">
           <h4 class="glyphicon glyphicon-home"></h4><br/>Home
         </a>
-        <a href="#profile" data-url="/lec/discover" class="list-group-item text-center">
+        <a href="#profile" data-url="{% url 'account' user.id %}" class="list-group-item text-center">
           <h4 class="glyphicon glyphicon-road"></h4><br/>Account
         </a>
-        <a href="#" class="list-group-item text-center">
-          <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Units
+        <a href="#units" class="list-group-item list-group-item text-center" data-parent="#MainMenu" data-toggle="collapse">
+          <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
+          <br/>Units<b class="caret"></b>
         </a>
-        <a href="#" class="list-group-item text-center">
+        <div class="collapse" id="units">
+          <a href="#" class="list-group-item text-center">Subitem 1
+            <br/>Sub subitem1</a>
+          <a href="#" class="list-group-item text-center">Subitem 2<br/>Sub subitem2</a>
+          <a href="#" class="list-group-item text-center">Subitem 3<br/>Sub subitem3</a>
+        </div>
+        <a href="#project" data-url="{% url 'create_project'%}" class="list-group-item text-center">
           <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
           <br/>Projects
         </a>
@@ -40,9 +45,13 @@
       </div>
     </div>
     <div class="tab-content">
-      <div id="profile"></div>
-      <div id="tab_images" class="tab-pane active"></div>
-      <div id="tab_videos" class="tab-pane active"></div>
+      <div id="discover" class="tab-pane active"></div>
+      <div id="profile" class="tab-pane active"></div>
+      <div id="units" class="tab-pane active"></div>
+      <div id="tab3" class="tab-pane active"></div>
+      <div id="tab4" class="tab-pane active"></div>
+      <div id="tab5" class="tab-pane active"></div>
+      <div id="project" class="tab-pane active"></div>
     </div>
   </header>
 {% endblock %}
@@ -51,6 +60,14 @@
   {% bootstrap_javascript %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="external/jquery.ui.core.min.js"></script>
+
+  <script type="text/javascript" src="external/jquery.ui.widget.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.integralui.widget.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.integralui.tabstrip.min.js"></script>
   <script type="text/javascript" src="{% static 'js/tabs.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/accordion.js' %}"></script>
 
 {% endblock %}
