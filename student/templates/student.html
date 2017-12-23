@@ -8,18 +8,16 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-  {{block.super}}
-
   <header class="landing_page">
     <div class="tab">
       <div class="list-group">
-        <a href="/lec/discover" data-url="/lec/discover" class="list-group-item text-center">
+        <a href="#discover" data-url="{% url 'discover' %}" class="list-group-item text-center">
           <h4 class="glyphicon glyphicon-home"></h4><br/>Home
         </a>
-        <a href="#profile" data-url="/lec/discover" class="list-group-item text-center">
+        <a href="#profile" data-url="{% url 'account' user.id %}" class="list-group-item text-center">
           <h4 class="glyphicon glyphicon-road"></h4><br/>Account
         </a>
-        <a href="#" class="list-group-item text-center">
+        <a href="#tab_images" data-url="{% url 'account' user.id %}" class="dropdown-toggle list-group-item text-center" data-toggle="dropdown">
           <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Units
         </a>
         <a href="#" class="list-group-item text-center">
@@ -40,7 +38,8 @@
       </div>
     </div>
     <div class="tab-content">
-      <div id="profile"></div>
+      <div id="discover" class="tab-pane active"></div>
+      <div id="profile" class="tab-pane active"></div>
       <div id="tab_images" class="tab-pane active"></div>
       <div id="tab_videos" class="tab-pane active"></div>
     </div>
