@@ -22,10 +22,13 @@
           <br/>Units<b class="caret"></b>
         </a>
         <div class="collapse" id="units">
-          <a href="#" class="list-group-item text-center">Subitem 1
-            <br/>Sub subitem1</a>
-          <a href="#" class="list-group-item text-center">Subitem 2<br/>Sub subitem2</a>
-          <a href="#" class="list-group-item text-center">Subitem 3<br/>Sub subitem3</a>
+          {% for unit in units %}
+            <a href="#" class="list-group-item text-center">{{unit.code}}
+              <br/>{{unit.name}}</a>
+            {% empty %}
+            <a href="#" class="list-group-item text-center">Subitem 2<br/>Sub subitem2</a>
+            <a href="#" class="list-group-item text-center">Subitem 3<br/>Sub subitem3</a>
+          {% endfor %}
         </div>
         <a href="#project" data-url="{% url 'create_project'%}" class="list-group-item text-center">
           <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
