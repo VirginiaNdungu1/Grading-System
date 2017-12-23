@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from . models import Profile, Program, Module, Unit, Days
+from . models import Profile, Program, Module, Unit, Days, Assessment, Project
 
 #
 # class UnitAdmin(admin.ModelAdmin):
@@ -74,3 +74,5 @@ admin.site.register(Program)
 admin.site.register(Module, ModuleAdmin)
 admin.site.register(Unit, DayAdmin)
 admin.site.register(Days)
+admin.site.register(Assessment)
+admin.site.register(Project)
