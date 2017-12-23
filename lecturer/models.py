@@ -6,6 +6,7 @@ from django.core.validators import RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 import student
 import weekday_field
+from datetime import datetime as dt
 
 # Create your models here.
 
@@ -33,6 +34,10 @@ DAYS_OF_WEEK = (
     ('FRIDAY', 'Fri'),
     ('SATURDAY', 'Sat')
 )
+
+
+def get_now():
+    return dt.now().strftime("%d/%m/%Y")
 
 
 class Days(models.Model):
@@ -90,12 +95,13 @@ class Project(models.Model):
     title = models.CharField(max_length=140)
     link = models.CharField(max_length=140, blank=True)
     upload_file = models.FileField(blank=True)
-    additional_notes = models.TextField(max_length=500)
+    additional_notes = models.TextField(max_length=500, blank=True)
     assessment_type = models.ForeignKey(
         Assessment, related_name="assessment", on_delete="models.CASCADE", null=True)
     submissions = models.ManyToManyField(
         'student.Submission', related_name='submitted_projects', blank=True)
-    due_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    due_date = models.DateTimeField(default=get_now, blank=True)
+    due_time = models.TimeField(null=True, blank=True)
 
     def __str__(self):
         return self.title
