@@ -23,7 +23,7 @@
         </a>
         <div class="collapse" id="units">
           {% for unit in units %}
-            <a href="#sub-unit" data-url="{% url 'units' %}" class="list-group-item text-center">{{unit.code}}
+            <a href="#sub-unit" data-url="{% url 'units' unit.id %}" class="list-group-item text-center">{{unit.code}}
               <br/>{{unit.name}}</a>
             {% empty %}
             <a href="#" class="list-group-item text-center">Subitem 2<br/>Sub subitem2</a>
