@@ -98,6 +98,8 @@ class Project(models.Model):
     additional_notes = models.TextField(max_length=500, blank=True)
     assessment_type = models.ForeignKey(
         Assessment, related_name="assessment", on_delete="models.CASCADE", null=True)
+    unit = models.ForeignKey(
+        Unit, related_name="unit", on_delete="models.CASCADE", null=True)
     submissions = models.ManyToManyField(
         'student.Submission', related_name='submitted_projects', blank=True)
     due_date = models.DateTimeField(default=get_now, blank=True)
