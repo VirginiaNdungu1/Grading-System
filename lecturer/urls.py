@@ -7,8 +7,8 @@ urlpatterns = [
     url(r'^$', views.lecture, name='lecturer'),
     url(r'^profiles/edit', views.update_user_profile, name='updateuserprofile'),
     url(r'^discover/$', views.discover, name='discover'),
-    url(r'^units/$', views.units, name='units'),
-    url(r'^units/projects', views.get_unit_projects, name='projects'),
+    url(r'^units/(\d+)$', views.units, name='units'),
+    url(r'^units/projects/(\d+)$', views.get_unit_projects, name='projects'),
     url(r'^account/(\d+)$', views.account, name='account'),
     url(r'^project/create', views.create_project, name='create_project')
 ]
