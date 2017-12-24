@@ -15,7 +15,7 @@
           <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
           <br/>NOTES
         </a>
-        <a href="#assignments" data-url="{% url 'projects' %}" class="list-group-item list-group-item-warning text-center">
+        <a href="#assignments" data-url="{% url 'projects' unit.id %}" class="list-group-item list-group-item-warning text-center">
           <i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
           <br/>PROJECTS
         </a>
@@ -23,12 +23,17 @@
           <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
           <h4 class="glyphicon glyphicon-graduation-cap"></h4><br/>GRADES
         </a>
+        <!-- <a href="#create_project" data-url="{% url 'create_project' %}">
+          <button class="btn-project" type="button" name="button">Add/Remove Project</button>
+        </a> -->
       </div>
+
     </div>
     <div class="tab-content">
       <div class="tab-pane active" id="notes"></div>
       <div class="tab-pane active" id="assignments"></div>
       <div class="tab-pane active" id="cats"></div>
+      <div class="tab-pane active" id="create_project"></div>
     </div>
   </header>
 {% endblock %}
