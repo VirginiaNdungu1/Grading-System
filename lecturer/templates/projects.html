@@ -1,0 +1,243 @@
+{% load bootstrap3 %}
+{% load static %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/portal.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <div class="project-section">
+    <div class="outer-table">
+      <div class="clearfix"></div>
+      <!-- <hr class="intro-divider"> -->
+      <button class="btn-project" type="button" name="button">Add/Remove Project</button>
+      <h4 class="unit-intro">UNIT NAME</h4>
+      <div class="clearfix"></div>
+      <hr class="intro-divider">
+      <div class="middle-table">
+
+        <!-- <div class="clearfix"></div> -->
+        <div class="accordion-option">
+          <h3 class="title">HoxBox Projects</h3>
+          <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Independent Project
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <div class="center">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th width="20%">
+                          Code
+                        </th>
+                        <th width="20%">
+                          Title
+                        </th>
+                        <th width="20%">
+                          upload_file
+                        </th>
+                        <th width="20%">
+                          Due Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i class="fa fa-key"></i>
+                          Admin
+                        </td>
+                        <td>
+                          title
+                        </td>
+                        <td>
+                          uploaded_file
+                        </td>
+                        <td>
+                          Due_datetime
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  Group Projects
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <div class="center">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th width="20%">
+                          Code
+                        </th>
+                        <th width="20%">
+                          Title
+                        </th>
+                        <th width="20%">
+                          upload_file
+                        </th>
+                        <th width="20%">
+                          Due Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i class="fa fa-key"></i>
+                          Admin
+                        </td>
+                        <td>
+                          title
+                        </td>
+                        <td>
+                          uploaded_file
+                        </td>
+                        <td>
+                          Due_datetime
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                  CATS
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <div class="center">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th width="20%">
+                          Code
+                        </th>
+                        <th width="20%">
+                          Title
+                        </th>
+                        <th width="20%">
+                          upload_file
+                        </th>
+                        <th width="20%">
+                          Due Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i class="fa fa-key"></i>
+                          Admin
+                        </td>
+                        <td>
+                          title
+                        </td>
+                        <td>
+                          uploaded_file
+                        </td>
+                        <td>
+                          Due_datetime
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                  Mid-Sem Exam
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <div class="center">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th width="20%">
+                          Code
+                        </th>
+                        <th width="20%">
+                          Title
+                        </th>
+                        <th width="20%">
+                          upload_file
+                        </th>
+                        <th width="20%">
+                          Due Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <i class="fa fa-key"></i>
+                          Admin
+                        </td>
+                        <td>
+                          title
+                        </td>
+                        <td>
+                          uploaded_file
+                        </td>
+                        <td>
+                          Due_datetime
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {% bootstrap_javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="external/jquery.ui.core.min.js"></script>
+  <script type="text/javascript" src="external/jquery.ui.widget.min.js"></script>
+  <script type="text/javascript" src="js/jquery.integralui.widget.min.js"></script>
+  <script type="text/javascript" src="js/jquery.integralui.tabstrip.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/accordion.js' %}"></script>
+{% endblock %}
