@@ -8,13 +8,20 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
+  <div id="myTabs"></div>
   <div class="project-section">
+
     <div class="outer-table">
       <div class="clearfix"></div>
       <!-- <hr class="intro-divider"> -->
-      <button class="btn-project" type="button" name="button">Add/Remove Project</button>
-      <h4 class="unit-intro">UNIT NAME</h4>
-      <div class="clearfix"></div>
+      <a href="#create_project" data-url="{% url 'create_project' %}">
+        <button class="btn-project" type="button" name="button">Add/Remove Project</button>
+      </a>
+      <i class="fa fa-graduation-cap " aria-hidden="true"></i>{{unit.name}}<br/>
+      <h4>{{unit.code}}</h4>
+      <!-- <h4 class="unit-intro">{{unit.code}}</h4>
+      <h4 class="unit-intro">{{unit.name}}</h4> -->
+      <!-- <div class="clearfix"></div> -->
       <hr class="intro-divider">
       <div class="middle-table">
 
@@ -51,24 +58,29 @@
                         <th width="20%">
                           Due Date
                         </th>
+                        <!-- <th width="20%">
+                          Due Time
+                        </th> -->
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <i class="fa fa-key"></i>
-                          Admin
-                        </td>
-                        <td>
-                          title
-                        </td>
-                        <td>
-                          uploaded_file
-                        </td>
-                        <td>
-                          Due_datetime
-                        </td>
-                      </tr>
+                      {% for ass in ind_ass %}
+                        <tr>
+                          <td>
+                            <i class="fa fa-key"></i>
+                            {{ass.unit.code}}
+                          </td>
+                          <td>
+                            {{ass.title}}
+                          </td>
+                          <td>
+                            {{ass.upload_file}}
+                          </td>
+                          <td>
+                            {{ass.due_date}}
+                          </td>
+                        </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -104,21 +116,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <i class="fa fa-key"></i>
-                          Admin
-                        </td>
-                        <td>
-                          title
-                        </td>
-                        <td>
-                          uploaded_file
-                        </td>
-                        <td>
-                          Due_datetime
-                        </td>
-                      </tr>
+                      {% for ass in group_ass %}
+                        <tr>
+                          <td>
+                            <i class="fa fa-key"></i>
+                            {{ass.unit.code}}
+                          </td>
+                          <td>
+                            {{ass.title}}
+                          </td>
+                          <td>
+                            {{ass.upload_file}}
+                          </td>
+                          <td>
+                            {{ass.due_date}}
+                          </td>
+                        </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -154,21 +168,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <i class="fa fa-key"></i>
-                          Admin
-                        </td>
-                        <td>
-                          title
-                        </td>
-                        <td>
-                          uploaded_file
-                        </td>
-                        <td>
-                          Due_datetime
-                        </td>
-                      </tr>
+                      {% for ass in cats %}
+                        <tr>
+                          <td>
+                            <i class="fa fa-key"></i>
+                            {{ass.unit.code}}
+                          </td>
+                          <td>
+                            {{ass.title}}
+                          </td>
+                          <td>
+                            {{ass.upload_file}}
+                          </td>
+                          <td>
+                            {{ass.due_date}}
+                          </td>
+                        </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -204,21 +220,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <i class="fa fa-key"></i>
-                          Admin
-                        </td>
-                        <td>
-                          title
-                        </td>
-                        <td>
-                          uploaded_file
-                        </td>
-                        <td>
-                          Due_datetime
-                        </td>
-                      </tr>
+                      {% for ass in mid_exams %}
+                        <tr>
+                          <td>
+                            <i class="fa fa-key"></i>
+                            {{ass.unit.code}}
+                          </td>
+                          <td>
+                            {{ass.title}}
+                          </td>
+                          <td>
+                            {{ass.upload_file}}
+                          </td>
+                          <td>
+                            {{ass.due_date}}
+                          </td>
+                        </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -227,8 +245,13 @@
           </div>
         </div>
       </div>
+
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="create_project"></div>
     </div>
   </div>
+
 {% endblock %}
 
 {% block scripts %}
@@ -239,5 +262,6 @@
   <script type="text/javascript" src="external/jquery.ui.widget.min.js"></script>
   <script type="text/javascript" src="js/jquery.integralui.widget.min.js"></script>
   <script type="text/javascript" src="js/jquery.integralui.tabstrip.min.js"></script>
+  <!-- <script type="text/javascript" src="{% static 'js/units.js' %}"></script> -->
   <script type="text/javascript" src="{% static 'js/accordion.js' %}"></script>
 {% endblock %}
