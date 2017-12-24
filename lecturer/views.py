@@ -5,7 +5,7 @@ from django.db import transaction
 from django.contrib import messages
 from django.http import Http404
 from .forms import UserProfileForm, CreateProjectForm
-from .models import Unit
+from .models import Unit, Project
 # Create your views here.
 
 
@@ -68,9 +68,27 @@ def create_project(request):
     return render(request, 'create_project.html', {"form": form})
 
 
-def units(request):
-    return render(request, 'units.html')
+def units(request, unit_code):
+    unit = Unit.objects.get(id=unit_code)
+    unit_id = unit.id
+    return render(request, 'units.html', {'unit': unit})
 
 
-def get_unit_projects(request):
-    return render(request, 'projects.html')
+def get_unit_projects(request, unit_code):
+    unit = Unit.objects.get(id=unit_code)
+    unit_id = unit.id
+    ind_ass = []
+    group_ass = []
+    cats = []
+    mid_exams = []
+    projects = Project.objects.filter(unit_id=unit_id).all()
+    for project in projects:
+        if project.assessment_type_id == 1:
+            ind_ass.append(project)
+        elif project.assessment_type_id == 2:
+            group_ass.append(project)
+        elif project.assessment_type_id == 3:
+            cats.append(project)
+        elif project.assessment_type_id == 4:
+            mid_exams.append(project)
+    return render(request, 'projects.html', {"unit": unit, "projects": projects, "ind_ass": ind_ass, "group_ass": group_ass, "cats": cats, "mid_exams": mid_exams})
