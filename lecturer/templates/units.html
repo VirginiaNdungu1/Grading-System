@@ -15,20 +15,20 @@
           <i class="fa fa-tasks fa-2x" aria-hidden="true"></i>
           <br/>NOTES
         </a>
-        <a href="#assignments" data-url="{% url 'account' user.id %}" class="list-group-item list-group-item-warning text-center">
-          <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+        <a href="#assignments" data-url="{% url 'projects' %}" class="list-group-item list-group-item-warning text-center">
+          <i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
           <br/>PROJECTS
         </a>
         <a href="#cats" class="list-group-item list-group-item-danger text-center">
-          <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
-          <br/>CATS
+          <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          <h4 class="glyphicon glyphicon-graduation-cap"></h4><br/>GRADES
         </a>
       </div>
     </div>
     <div class="tab-content">
       <div class="tab-pane active" id="notes"></div>
-      <div class="tab-pane" id="assignments"></div>
-      <div class="tab-pane" id="cats"></div>
+      <div class="tab-pane active" id="assignments"></div>
+      <div class="tab-pane active" id="cats"></div>
     </div>
   </header>
 {% endblock %}
