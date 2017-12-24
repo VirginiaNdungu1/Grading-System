@@ -70,3 +70,7 @@ def create_project(request):
 
 def units(request):
     return render(request, 'units.html')
+
+
+def get_unit_projects(request):
+    return render(request, 'projects.html')
